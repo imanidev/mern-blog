@@ -12,9 +12,6 @@ const Navbar = () => {
         <li>
           <Link to="/new">Create a new post</Link>
         </li>
-        {/* <li>
-          <Link to="/posts/:id">View post</Link>
-        </li> */}
       </ul>
     </nav>
   );

@@ -10,7 +10,7 @@ import Post from './components/Post'
 import EditPost from './components/EditPost'
 import Navbar from './components/Navbar/Navbar'
 import PostList from './components/PostList'
-
+import EditPostButton from './utils/EditPostButton'
 
 function App() {
 
@@ -23,7 +23,8 @@ function App() {
         <Route path='/new' element={<NewNote />} />
         <Route path='/delete/:id' element={<DeletePost />} />
         <Route path='/post/:id' element={<PostList />} />
-        <Route path='/edit/:id' element={<EditPost />} />
+        {/* <Route path='/edit-post/:id' element={<EditPost />} /> */}
+        <Route path='/edit-post/:id' element={<EditPostButton />}/>
       </Routes>
       <Footer />
     </div>

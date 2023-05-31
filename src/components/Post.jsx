@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeletePostButton from '../utils/DeletePostButton';
-import EditPostButton from '../utils/EditPostButton';
-
+// import {EditPostButton} from '../utils/EditPostButton';
+import { Link } from 'react-router-dom';
 
 const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
@@ -36,7 +36,9 @@ const Post = () => {
           <p>Created at: {post.createdAt}</p>
           <p>Updated at: {post.updatedAt}</p>
           <DeletePostButton post={post._id} />
-          <EditPostButton post={post._id} />
+       <Link to={`/edit-post/${post._id}`} state={post._id}>
+      <button>Edit</button>
+    </Link>
         </div>
       ))}
 
@@ -45,4 +47,3 @@ const Post = () => {
 };
 
 export default Post;
-
