@@ -7,6 +7,11 @@ text-align: center;
   display: flex;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+
 /* nav */
 nav {
   display: flex;
@@ -26,37 +31,98 @@ nav li a {
 }
 
 nav li a:hover {
-  color: blue;
+  color: white;
+  border: 1px solid black;
+  border-width: 7px;
+  background-color: black;
 }
 
-/* PAGES */
 
-/* home */
 
-.home-text {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  text-align: center;
-  margin: auto;
+/* Heading styles */
+h1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-/* about */
-
-.about-text {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  text-align: center;
-  margin: auto;
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-/* contact */
+/* Post styles */
+.post {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-.contact-text {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  text-align: center;
-  margin: auto;
+.post h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.post p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .post {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  form input[type="text"],
+  form textarea {
+    padding: 6px;
+  }
+
+  form button[type="submit"] {
+    padding: 8px 16px;
+  }
 }
