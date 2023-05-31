@@ -10,17 +10,11 @@ const Navbar = () => {
           <Link to="/">View all posts</Link>
         </li>
         <li>
-          <Link to="/new">New</Link>
+          <Link to="/new">Create a new post</Link>
         </li>
-        <li>
-          <Link to="/posts/:id/edit">Edit</Link>
-        </li>
-        <li>
+        {/* <li>
           <Link to="/posts/:id">View post</Link>
-        </li>
-        <li>
-          <Link to="/posts/:id/delete">Delete</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

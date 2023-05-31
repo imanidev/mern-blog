@@ -1,36 +1,31 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
-// const url = 'http://localhost:3001/posts';
+const url = 'https://mern-blog-api-he2o.onrender.com/posts';
 
 const DeletePost = () => {
   const [postId, setPostId] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const response = await axios.delete(`${url}/${postId}`);
-      console.log(response.data);
-      setPostId('');
+      await axios.delete(`${url}/${postId}`);
+      alert(`Post with ID ${postId} deleted successfully!`);
     } catch (error) {
       console.error(error);
+      alert(`Error deleting post with ID ${postId}: ${error.message}`);
     }
   };
 
-
   return (
     <div>
-      <h2>Delete a Post</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="postId">Post ID:</label>
-          <input
-            type="text"
-            id="postId"
-            value={postId}
-            onChange={(event) => setPostId(event.target.value)}
-          />
-        </div>
+        <label>
+          Post ID:
+          <input type="text" value={postId} onChange={(event) => setPostId(event.target.value)} />
+        </label>
         <button type="submit">Delete</button>
       </form>
     </div>
