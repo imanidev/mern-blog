@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-const url = 'http://localhost:3001/posts';
+// const url = 'http://localhost:3001/posts';
+
+const url = "https://api-mern-blog.vercel.app/posts";
 
 const NewNote = () => {
   const [title, setTitle] = useState('');
@@ -11,7 +13,7 @@ const NewNote = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(url, {
+      const response = await axios.post('url', {
         title,
         image,
         content,
