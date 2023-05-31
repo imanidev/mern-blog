@@ -7,8 +7,8 @@ const url = 'https://mern-blog-api-he2o.onrender.com/posts';
 const DeletePost = () => {
   const [postId, setPostId] = useState('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
 
     try {
       await axios.delete(`${url}/${postId}`);

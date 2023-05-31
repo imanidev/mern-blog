@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeletePostButton from '../utils/DeletePostButton';
 // import {EditPostButton} from '../utils/EditPostButton';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
@@ -10,7 +10,7 @@ const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
 const Post = () => {
   const [posts, setPosts] = useState([]);
-
+const navigation = useNavigate()
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -36,9 +36,9 @@ const Post = () => {
           <p>Created at: {post.createdAt}</p>
           <p>Updated at: {post.updatedAt}</p>
           <DeletePostButton post={post._id} />
-       <Link to={`/edit-post/${post._id}`} state={post._id}>
-      <button>Edit</button>
-    </Link>
+       
+      <button onClick={()=> navigation(`/edit-post/${post._id}`)}>Edit</button>
+
         </div>
       ))}
 

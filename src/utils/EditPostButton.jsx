@@ -3,19 +3,28 @@ import React, { useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
-const EditPostButton = () => {
-  const {id} = useParams()
+  const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
+
+
+const EditPostButton = () => {
+
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [image, setImage] = useState('');
+  const [postId, setPostId] = useState('');
+  const [author, setAuthor] = useState('');
+
+  const {id} = useParams()
+const result = `${url}/${id}`
  const [data, setData] = useState(null)
   // const id = useLocation()
   
   const getAPI = () => {
     try {
-      // const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
-      const url = 'http://localhost:3001/posts'
 
-const result = `${url}/${id}`
+
 
       axios.get(result).then((response) => {
                setData(response.data);
@@ -30,8 +39,15 @@ const result = `${url}/${id}`
   },
     [])
   const handleSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
+    axios.put(result, {
+      title,
+      content,
+      image,
+      author,
+    })
   }
+
   return (
     <div>
       <h2>Edit Page</h2>
@@ -40,16 +56,28 @@ const result = `${url}/${id}`
           <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='title'>Title:</label>
-          <input type='text' id='title' value={data.title} />
+              <input type='text' id='title' value={data.title}
+              onChange={(event) => setTitle(event.target.value)} />
+            
         </div>
         <div>
           <label htmlFor='content'>Content:</label>
-          <textarea id='content' value={data.content}/>
+              <textarea id='content' value={data.content}
+              onChange={(event) => setContent(event.target.value)}
+              />
         </div>
         <div>
           <label htmlFor='image'>Image:</label>
-          <input type='text' id='image' value={data.image} />
-        </div>
+              <input type='text' id='image' value={data.image}
+              onChange={(event) => setImage(event.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor='author'>Author:</label>
+              <input type='text' id='author' value={data.author}
+              onChange={(event) => setAuthor(event.target.value)}
+              />
+            </div>
         <button type='submit'>Edit Post</button>
       </form>
           </div>

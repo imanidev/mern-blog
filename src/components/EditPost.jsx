@@ -5,12 +5,7 @@ const url = 'https://mern-blog-api-he2o.onrender.com/posts'
   
 
 const EditPost =() => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [image, setImage] = useState('');
-  const [postId, setPostId] = useState('');
-
-
+ 
   useEffect(() => {
     const fetchPost = async () => {
       try {

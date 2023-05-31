@@ -12,7 +12,7 @@ const NewNote = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(url, {
+     await axios.post(url, {
         title,
         image,
         content,
