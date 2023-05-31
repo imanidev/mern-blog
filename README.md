@@ -78,7 +78,7 @@ npm run dev
 
 - **Connecting the front-end and back-end:** The biggest challenge I faced was connecting the front-end and back-end of the application. I learned how to use Axios to make HTTP requests from the front-end to the back-end. I was able to overcome this challenge by reading the documentation for Axios and learning about CORS (Cross-Origin Resource Sharing).
 
-The backend applicaton using Node.js, Express.js and Mongoose can be found [here](https://github.com/imanidev/blog-backend).
+The backend applicaton using Node.js, Express.js and Mongoose can be found [here](https://github.com/imanidev/blog-api).
 
 ---
 ## Unsolved Problems
