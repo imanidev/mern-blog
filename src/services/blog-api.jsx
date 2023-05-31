@@ -39,3 +39,11 @@ export const deletePost = async (id) => {
     return response;
 };
 
+
+ export default {
+     getAllPosts,
+     getPost,
+     createPost,
+     updatePost,
+     deletePost,
+ };

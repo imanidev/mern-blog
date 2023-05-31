@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
+const url = 'http://localhost:3001/posts';
 
 const DeletePost = () => {
   const [postId, setPostId] = useState('');
@@ -6,7 +9,7 @@ const DeletePost = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.delete(`/api/posts/${postId}`);
+      const response = await axios.delete(`${url/postId}`);
       console.log(response.data);
       setPostId('');
     } catch (error) {

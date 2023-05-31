@@ -3,11 +3,12 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import CreatePost from './components/CreatePost'
+import NewNote from './components/NewNote'
 import DeletePost  from './components/DeletePost'
 import Post from './components/Post'
 import EditPost from './components/EditPost'
 import Navbar from './components/Navbar/Navbar'
+import PostList from './components/PostList'
 
 
 
@@ -21,9 +22,10 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path='/create' element={<CreatePost />} />
+        <Route path='/' element={<Post />} />
+        <Route path='/new' element={<NewNote />} />
         <Route path='/delete/:id' element={<DeletePost />} />
-        <Route path='/post/:id' element={<Post />} />
+        <Route path='/post/:id' element={<PostList />} />
         <Route path='/edit/:id' element={<EditPost />} />
       </Routes>
       <Footer />

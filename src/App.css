@@ -1,9 +1,9 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: auto;
   padding: 2rem;
-justify-content: center;
-text-align: center;
+  justify-content: center;
+  text-align: center;
   display: flex;
 }
 
@@ -20,9 +20,8 @@ justify-content: center;
 }
 
 nav li {
-display: inline-block;
+display: inline;
 margin-right: 1rem;
-list-style: none;
 }
 
 nav li a {
@@ -106,6 +105,16 @@ form button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+/* footer */
+
+footer {
+  display: flex;
+justify-content: center;
+padding: 2rem;
+}
+
+/* MEDIA QUERIES */
+
 /* Responsive styles */
 @media (max-width: 600px) {
   .container {
@@ -126,3 +135,4 @@ form button[type="submit"]:hover {
     padding: 8px 16px;
   }
 }
+

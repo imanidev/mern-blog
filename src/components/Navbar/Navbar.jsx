@@ -7,10 +7,10 @@ const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Show all posts</Link>
+          <Link to="/">View all posts</Link>
         </li>
         <li>
-          <Link to="/create">Create</Link>
+          <Link to="/new">New</Link>
         </li>
         <li>
           <Link to="/posts/:id/edit">Edit</Link>

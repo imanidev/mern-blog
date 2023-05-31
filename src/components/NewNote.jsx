@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-const CreatePost = () => {
+const url = 'http://localhost:3001/posts';
+
+const NewNote = () => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [content, setContent] = useState('');
@@ -9,7 +11,7 @@ const CreatePost = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/posts', {
+      const response = await axios.post(url, {
         title,
         image,
         content,
@@ -69,4 +71,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default NewNote;
