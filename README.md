@@ -11,18 +11,18 @@ The MERN Blog Application is designed to provide a user-friendly platform for bl
   
 ## Technologies Used
 
-- Front-end:
+### Front-end:
   - React.js
   - React Router
   - Vite
 
-- Back-end:
+  ### Back-end:
   - Node.js
   - Express.js
   - MongoDB
   - Mongoose
   
-- Other tools and libraries:
+### Other tools and libraries:
   - Axios
   - Morgan
 
@@ -76,9 +76,9 @@ npm run dev
 ## Challenges Faced
 
 
-- **Connecting the front-end and back-end:** The biggest challenge I faced was connecting the front-end and back-end of the application. I learned how to use Axios to make HTTP requests from the front-end to the back-end. I was able to overcome this challenge by reading the documentation for Axios and learning about CORS (Cross-Origin Resource Sharing).
+- **Connecting the front-end and back-end:** The biggest challenge I faced was connecting the front-end and back-end of the application. I learned how to use Axios to make HTTP requests from the front-end to the back-end. I was able to overcome this challenge by reading the documentation for Axios, learning about CORS (Cross-Origin Resource Sharing) and asking my colleagues for help.
 
-The backend applicaton using Node.js, Express.js and Mongoose can be found [here](https://github.com/imanidev/blog-api).
+  The backend of this applicaton uses Node.js, Express.js and Mongoose can be found [here](https://github.com/imanidev/blog-api).
 
 ---
 ## Unsolved Problems
