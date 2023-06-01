@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 const url = 'https://mern-blog-api-he2o.onrender.com/posts'
   

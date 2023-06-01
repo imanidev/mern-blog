@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// const url = 'http://localhost:3001/posts';
+
 const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
 const NewNote = () => {

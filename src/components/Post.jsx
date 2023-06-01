@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeletePostButton from '../utils/DeletePostButton';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 
 const url = "https://mern-blog-api-he2o.onrender.com/posts";
 
@@ -30,7 +30,6 @@ const navigation = useNavigate()
 
   return (
     <div>
-      <h2>Posts</h2>
       {posts.map((post) => (
         <div key={post._id}>
           <h3>{post.title}</h3>

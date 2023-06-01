@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Post from './Post';
 
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleDateString('en-US', {
+  month: '2-digit',
+  day: '2-digit',
+  year: 'numeric'
+});
+
 const PostList = () => {
   const [posts, setPosts] = useState([]);
 
@@ -27,8 +34,8 @@ const PostList = () => {
           content={post.content}
           image={post.image}
           author={post.author}
-          createdAt={post.createdAt} 
-          updatedAt={post.updatedAt} 
+          createdAt={formattedDate} 
+          updatedAt={formattedDate} 
         />
       ))}
     </div>

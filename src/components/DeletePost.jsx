@@ -9,7 +9,6 @@ const DeletePost = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-
     try {
       await axios.delete(`${url}/${postId}`);
       alert(`Post with ID ${postId} deleted successfully!`);

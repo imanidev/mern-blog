@@ -3,11 +3,7 @@ import React, { useEffect } from 'react';
 import {useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
-
-
 const url = "https://mern-blog-api-he2o.onrender.com/posts";
-
-
 
 const EditPostButton = () => {
 
@@ -15,12 +11,13 @@ const EditPostButton = () => {
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
   const [author, setAuthor] = useState('');
-const {id} = useParams()
-const result = `${url}/${id}`
   const [data, setData] = useState(null)
+
+  const { id } = useParams()
+  const result = `${url}/${id}`
+
   const navigation = useNavigate()
 
-  
   const getAPI = () => {
     try {
       axios.get(result).then((response) => {
@@ -35,6 +32,7 @@ const result = `${url}/${id}`
     getAPI()
   },
     [])
+  
   const handleSubmit = (evt) => {
     evt.preventDefault();
     axios.put(result, {
@@ -47,15 +45,13 @@ const result = `${url}/${id}`
     navigation('/')})
 }
   
-
   return (
     <div>
       <h2>Edit Page</h2>
       {data ?
         <div>
-       
-        <form onSubmit={handleSubmit}> 
-          
+          <form onSubmit={handleSubmit}>
+            
           <label htmlFor='title'>Title:</label>
               <input type='text' id='title' defaultValue={data.title}
               onChange={(event) => setTitle(event.target.value)} />
@@ -72,7 +68,7 @@ const result = `${url}/${id}`
               <input type='text' id='author' defaultValue={data.author}
               onChange={(event) => setAuthor(event.target.value)}/>
            
-          <button type='submit'>Confirm</button>
+          <button type='submit'>Confirm Changes</button>
       </form>
       </div>
         : <div>not found</div>}
@@ -81,6 +77,5 @@ const result = `${url}/${id}`
 
   );
 }
-
 
 export default EditPostButton;
